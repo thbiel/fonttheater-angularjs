@@ -3,7 +3,7 @@ var app = angular.module('app', ['ngRoute', 'fontLibrary', 'colorSchemes']);
 app.config(
     ['$routeProvider', function($routeProvider) {
     $routeProvider.
-        when('/', {
+        when('', {
             templateUrl: 'app/templates/home.html'
         }).
         when('/colors/:colorScheme/:font?', {
