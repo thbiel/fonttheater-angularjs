@@ -6,10 +6,10 @@ app.config(
         when('/', {
             templateUrl: 'app/templates/home.html'
         }).
-        when('/colors/:colorScheme/:font?', {
+        when('/colors/:colorScheme?/:font?', {
             templateUrl: 'app/templates/colors.html'
         }).
-        when('/headings/:colorScheme/:font?', {
+        when('/headings/:colorScheme?/:font?', {
             templateUrl: 'app/templates/headings.html'
         }).
         otherwise({
