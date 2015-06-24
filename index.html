@@ -1,0 +1,19 @@
+<html ng-app="app" ng-controller="FontController">
+    <head>
+        <title>Font demo</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-resource.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.js"></script>
+        <script type='text/javascript' src='http://ec2-46-137-74-84.eu-west-1.compute.amazonaws.com/public/fontface/js/jquery-1.6.1.min.js'></script>
+        <script type='text/javascript' src="app/fontface.js"></script>
+        <script type='text/javascript' src="fontlibrary/fontlibrary.js"></script>
+        <script type='text/javascript' src="colorschemes/colorschemes.js"></script>
+
+        <link ng-href='http://fonts.googleapis.com/css?family={{currentFont.id}}' rel='stylesheet' type='text/css'>
+        <link href='css/colors.css' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body ng-style="currentFontStyle" style="margin: 0; padding: 0;" ng-keydown="keyPressed($event)">
+        <div ng-view></div>
+    </body>
+</html>
