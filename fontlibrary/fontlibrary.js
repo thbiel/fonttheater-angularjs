@@ -82,6 +82,8 @@ var thbFonts =
         {"id": "Cambay", "name": "Cambay", "providerId": "google"},
         {"id": "Fira+Sans", "name": "Fira Sans", "providerId": "google"},
         {"id": "Cantarell", "name": "Cantarell", "providerId": "google"},
+        {"id": "Ek Mukta", "name": "Ek Mukta", "providerId": "google"},
+        {"id": "Martel+Sans", "name": "Martel Sans", "providerId": "google"},
         {"id": "Quicksand", "name": "Quicksand", "providerId": "google"},
         {"id": "Ropa+Sans", "name": "Ropa Sans", "providerId": "google"},
         {"id": "Open+Sans+Condensed:300", "name": "Open Sans Condensed", "providerId": "google"},
@@ -120,6 +122,8 @@ var thbFonts =
         {"id": "Oxygen", "name": "Oxygen", "providerId": "google"},
         {"id": "Scada", "name": "Scada"}
     ];
+    
+    //<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Orienta|Fira+Sans|Noto+Sans|Droid+Sans|Average+Sans|Tauri|Anaheim|Duru+Sans|Noto+Serif|Gudea|Ek+Mukta|Martel+Sans|Alegreya+Sans|Cambay|Pathway+Gothic+One|Merriweather+Sans|Sintony|Pontano+Sans|Telex|Carme|Slabo+13px|Slabo+27px|Roboto+Slab|Sanchez|Noticia+Text|Crimson+Text' rel='stylesheet' type='text/css'>
 
 
 
