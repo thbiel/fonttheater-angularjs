@@ -79,6 +79,8 @@ function fontFaceCssUrl(fontId, providerId) {
 
 var thbFonts =
     [
+        {"id": "Cambay", "name": "Cantarell", "providerId": "google"},
+        {"id": "Fira+Sans", "name": "Cantarell", "providerId": "google"},
         {"id": "Cantarell", "name": "Cantarell", "providerId": "google"},
         {"id": "Quicksand", "name": "Quicksand", "providerId": "google"},
         {"id": "Ropa+Sans", "name": "Ropa Sans", "providerId": "google"},
