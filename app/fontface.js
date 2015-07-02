@@ -12,6 +12,9 @@ app.config(
         when('/headings/:colorScheme?/:font?', {
             templateUrl: 'app/templates/headings.html'
         }).
+        when('/google/:colorScheme?/:font?', {
+            templateUrl: 'app/templates/google-search.html'
+        }).
         otherwise({
             redirectTo: '/'
         });
