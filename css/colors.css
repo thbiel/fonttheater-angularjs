@@ -35,6 +35,10 @@ a {
     color: inherit;
 }
 
+table {
+    color: inherit;
+}
+
 .emphasized {
     text-shadow: #00476E 2px 2px 2px;
     letter-spacing: 3px;
