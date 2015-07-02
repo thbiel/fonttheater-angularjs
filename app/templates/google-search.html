@@ -1,4 +1,34 @@
-<div data-async-context="query:lionel%20messi" id="ires">
+<table cellpadding="0" cellspacing="0" style="width: 100%; height: 100%; margin: 0; padding: 0;">
+    <tr>
+        <td height="730" style="width: 80%;" ng-style="primaryBackgroundStyle" valign="top">
+            <div style="margin-left: 40px; margin-right: 40px; margin-top: 10px;">
+                <table class="menu">
+                    <tr>
+                        <td valign="middle">
+                            <select
+                                    id="fontCollectionSelect"
+                                    ng-model="currentFontCollectionId"
+                                    ng-change="selectFontCollectionById(currentFontCollectionId)"
+                                    ng-options="fontCollection.id as fontCollection.id for fontCollection in fontCollections"
+                                    style="font-family: 'Lucida Sans Unicode', sans-serif; font-size: 12px;">
+                            </select>&nbsp;
+                        </td>
+                        <td valign="middle">
+                            <select
+                                    id="fontSelect"
+                                    ng-model="currentFontId"
+                                    ng-change="selectFontById(currentFontId)"
+                                    ng-options="font.id as font.name for font in currentFontCollection"
+                                    style="font-family: 'Lucida Sans Unicode', sans-serif; font-size: 12px;">
+                            </select>&nbsp;
+                        </td>
+                        <td valign="middle">
+                                <span ng-repeat="colorScheme in colorSchemes" ng-style="secondaryTextStyle"><a href="#/headings/{{colorScheme.id}}" ng-style="secondaryTextStyle">{{colorScheme.id}}</a>&nbsp;|&nbsp;</span>
+                        </td>
+                    </tr>
+                </table>
+
+                <div data-async-context="query:lionel%20messi" id="ires">
     <ol eid="J_yUVdvXA8q5sQHcv47wAg" id="rso">
         <div id="akp_target" data-ved="0CB0Q8UE"></div>
         <div class="srg">
@@ -359,3 +389,9 @@
         <hr class="rgsep">
     </ol>
 </div>
+                <br/>
+            </div>
+        </td>
+        <td style="width: 20%;" ng-style="shadowBackgroundStyle"></td>
+    </tr>
+</table>
