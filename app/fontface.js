@@ -15,6 +15,9 @@ app.config(
         when('/google/:colorScheme?/:font?', {
             templateUrl: 'app/templates/google-search.html'
         }).
+        when('/typecast-1/:colorScheme?/:font?', {
+            templateUrl: 'app/templates/typecast-1.html'
+        }).
         otherwise({
             redirectTo: '/'
         });
