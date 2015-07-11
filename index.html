@@ -14,6 +14,56 @@
     </head>
 
     <body ng-style="currentFontStyle" style="margin: 0; padding: 0;" ng-keydown="keyPressed($event)">
-        <div ng-view></div>
+    <table cellpadding="0" cellspacing="0" style="width: 100%; height: 100%; margin: 0; padding: 0;">
+        <tr>
+            <td height="730" style="width: 80%;" ng-style="primaryBackgroundStyle" valign="top">
+                <div style="margin-left: 40px; margin-right: 40px; margin-top: 10px;">
+                    <table class="menu">
+                        <tr>
+                            <td valign="middle">
+                                <select
+                                        id="templateSelect"
+                                        ng-model="currentTemplateId"
+                                        ng-change="selectTemplateById(currentTemplateId)"
+                                        ng-options="template.id as template.id for template in currentTemplateCollection"
+                                        style="font-family: 'Lucida Sans Unicode', sans-serif; font-size: 12px;">
+                                </select>&nbsp;
+                            </td>
+
+                            <td valign="middle">
+                                <select
+                                        id="fontCollectionSelect"
+                                        ng-model="currentFontCollectionId"
+                                        ng-change="selectFontCollectionById(currentFontCollectionId)"
+                                        ng-options="fontCollection.id as fontCollection.id for fontCollection in fontCollections"
+                                        style="font-family: 'Lucida Sans Unicode', sans-serif; font-size: 12px;">
+                                </select>&nbsp;
+                            </td>
+                            <td valign="middle">
+                                <select
+                                        id="fontSelect"
+                                        ng-model="currentFontId"
+                                        ng-change="selectFontById(currentFontId)"
+                                        ng-options="font.id as font.name for font in currentFontCollection"
+                                        style="font-family: 'Lucida Sans Unicode', sans-serif; font-size: 12px;">
+                                </select>&nbsp;
+                            </td>
+                            <td valign="middle">
+                                <span ng-repeat="colorScheme in colorSchemes" ng-style="secondaryTextStyle"><a href="#/{{currentTemplateId}}/{{colorScheme.id}}" ng-style="secondaryTextStyle">{{colorScheme.id}}</a>&nbsp;|&nbsp;</span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table cellpadding="0" cellspacing="0" _style="margin: 0; padding: 0; margin-top: 40px;">
+                        <div style="margin-top: 80px; margin-left: 50px; width: 840px;"  ng-style="primaryTextStyle">
+                            <div ng-view></div>
+                        </div>
+                    </table>
+                    <br/>
+                </div>
+            </td>
+            <td style="width: 20%;" ng-style="shadowBackgroundStyle"></td>
+        </tr>
+    </table>
     </body>
 </html>

@@ -2,21 +2,15 @@ var app = angular.module('app', ['ngRoute', 'fontLibrary', 'colorSchemes']);
 
 app.config(
     ['$routeProvider', function($routeProvider) {
+
     $routeProvider.
         when('/', {
             templateUrl: 'app/templates/home.html'
         }).
-        when('/colors/:colorScheme?/:font?', {
-            templateUrl: 'app/templates/colors.html'
-        }).
-        when('/headings/:colorScheme?/:font?', {
-            templateUrl: 'app/templates/headings.html'
-        }).
-        when('/google/:colorScheme?/:font?', {
-            templateUrl: 'app/templates/google-search.html'
-        }).
-        when('/typecast-1/:colorScheme?/:font?', {
-            templateUrl: 'app/templates/typecast-1.html'
+        when('/:template?/:colorScheme?/:font?', {
+            templateUrl: function(params) {
+                return templatesById[params['template']].templateUri
+            }
         }).
         otherwise({
             redirectTo: '/'
@@ -34,12 +28,18 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
     $scope.rp = $routeParams;
 
 
+    $scope.currentTemplateCollection = templates;
+
     $scope.fontLibrary = new FontLibrary(thbFonts);
 
     $scope.fontCollections = $scope.fontLibrary.fontCollections;
 
     $scope.selectFontById = function(fontId) {
         goToUrlForFont(fontId);
+    };
+
+    $scope.selectTemplateById = function(templateId) {
+        goToUrlForTemplate(templateId);
     };
 
     function currentFont(fontId) {
@@ -77,6 +77,10 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
         $location.path('/' + page + '/' + $scope.selectedColorScheme.id + '/' +  fontId)
     }
 
+    function goToUrlForTemplate(templateId) {
+        $location.path('/' + templateId + '/' + $scope.selectedColorScheme.id + '/' +  $scope.currentFontId)
+    }
+
     $scope.keyPressed = function(event) {
         if (event.which == 37) {
             $scope.selectPreviousFont();
@@ -105,7 +109,12 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
         }
 
         currentFont(fontId);
+
+        $scope.currentTemplateId = resolveTemplate($routeParams).id;
+
+        console.log($scope.currentTemplateId)
     });
+
 
     function selectColorScheme(id) {
         $scope.selectedColorScheme = colorSchemes.colorSchemesById[id];
@@ -127,3 +136,34 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
         return {'color': color};
     }
 });
+
+var templates = [
+    {id: 'colors', templateUri: 'app/templates/colors.html'},
+    {id: 'headings', templateUri: 'app/templates/headings.html'},
+    {id: 'google', templateUri: 'app/templates/google-search.html'},
+    {id: 'typecast-1', templateUri: 'app/templates/typecast-1.html'}
+];
+
+
+var templatesById = mapTemplateUriById(
+    templates
+);
+
+function mapTemplateUriById(templates) {
+    var map = {};
+    angular.forEach(templates, function(template) {
+        map[template.id] = template;
+    });
+    return map;
+}
+
+var DEFAULT_TEMPLATE_ID = 'headings';
+
+function resolveTemplate(routeParams) {
+    var id = routeParams['template'];
+    if (!id) {
+        id = DEFAULT_TEMPLATE_ID;
+    }
+
+    return templatesById[id];
+}
