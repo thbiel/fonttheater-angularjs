@@ -30,7 +30,7 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
 
     $scope.currentTemplateCollection = templates;
 
-    $scope.fontLibrary = new FontLibrary(thbFonts);
+    $scope.fontLibrary = new FontLibrary(cssFonts);
 
     $scope.fontCollections = $scope.fontLibrary.fontCollections;
 
@@ -51,24 +51,24 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
 
     $scope.selectFontCollectionById = function(fontCollectionId) {
         var fontCollection = $scope.fontLibrary.fontCollectionsById[fontCollectionId];
-        $scope.currentFontCollection = fontCollection.fonts;
+        $scope.currentFontCollection = fontCollection;
         $scope.currentFontCollectionId = fontCollection.id;
-        currentFont($scope.currentFontCollection[0].id);
+        currentFont($scope.currentFontCollection.fonts[0].id);
     };
 
     $scope.selectFontCollectionById($scope.fontCollections[0].id);
 
     $scope.selectPreviousFont = function() {
-        var index = $scope.currentFontCollection.indexOf($scope.currentFont);
+        var index = $scope.currentFontCollection.fonts.indexOf($scope.currentFont);
         if (index > 0) {
-            goToUrlForFont($scope.currentFontCollection[index - 1].id)
+            goToUrlForFont($scope.currentFontCollection.fonts[index - 1].id)
         }
     };
 
     $scope.selectNextFont = function() {
-        var index = $scope.currentFontCollection.indexOf($scope.currentFont);
-        if (index < ($scope.currentFontCollection.length - 1)) {
-            goToUrlForFont($scope.currentFontCollection[index + 1].id)
+        var index = $scope.currentFontCollection.fonts.indexOf($scope.currentFont);
+        if (index < ($scope.currentFontCollection.fonts.length - 1)) {
+            goToUrlForFont($scope.currentFontCollection.fonts[index + 1].id)
         }
     };
 
@@ -105,14 +105,12 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
         if (fontParam) {
             fontId = fontParam;
         } else {
-            fontId = $scope.currentFontCollection[0].id;
+            fontId = $scope.currentFontCollection.fonts[0].id;
         }
 
         currentFont(fontId);
 
         $scope.currentTemplateId = resolveTemplate($routeParams).id;
-
-        console.log($scope.currentTemplateId)
     });
 
 

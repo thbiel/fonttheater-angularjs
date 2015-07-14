@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'urbano-light2';
+    src: url('/font-face-fonts/urbano-light/urbano-light-webfont.eot');
+    src: url('/font-face-fonts/urbano-light/urbano-light-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/font-face-fonts/urbano-light/urbano-light-webfont.otf') format('opentype'),
+         url('/font-face-fonts/urbano-light/urbano-light-webfont.woff') format('woff'),
+         url('/font-face-fonts/urbano-light/urbano-light-webfont.ttf') format('truetype'),
+         url('/font-face-fonts/urbano-light/urbano-light-webfont.svg#urbano-light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

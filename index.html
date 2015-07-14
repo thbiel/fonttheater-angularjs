@@ -15,8 +15,33 @@
         <script type='text/javascript' src="fontlibrary/fontlibrary.js"></script>
         <script type='text/javascript' src="colorschemes/colorschemes.js"></script>
 
-        <link ng-repeat="font in currentFontCollection" ng-href='http://fonts.googleapis.com/css?family={{font.id}}' rel='stylesheet' type='text/css'>
+        <link ng-repeat="font in currentFontCollection.googleFonts" ng-href='http://fonts.googleapis.com/css?family={{font.id}}' rel='stylesheet' type='text/css'>
+        <link ng-repeat="font in currentFontCollection.cssFonts" ng-href='/fonts/font-face-css/{{font.id}}.css' rel='stylesheet' type='text/css'>
+
         <link href='css/colors.css' rel='stylesheet' type='text/css'>
+
+        <style>
+            @font-face {
+                font-family: 'amble-light-condensed';
+                src:
+                    url('/fonts/font-face-kit/Amble-Light-Condensed/Amble-LightCondensed-webfont.otf') format('opentype');
+                src:
+                    url('/fonts/font-face-kit/Amble-Light-Condensed/Amble-LightCondensed-webfont.eot?#iefix') format('embedded-opentype'),
+                    url('/fonts/font-face-kit/Amble-Light-Condensed/Amble-LightCondensed-webfont.woff') format('woff'),
+                    url('/fonts/font-face-kit/Amble-Light-Condensed/Amble-LightCondensed-webfont.ttf') format('truetype'),
+                    url('/fonts/font-face-kit/Amble-Light-Condensed/Amble-LightCondensed-webfont.svg#amble-light-condensed') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+        </style>
+        <style>
+            @font-face {
+                font-family: 'eau-sans-book';
+                src: url('/fonts/font-face-fonts/eau-sans-book/eau_sans_book.otf') format('opentype');
+                font-weight: normal;
+                font-style: normal;
+            }
+        </style>
     </head>
 
     <body ng-style="currentFontStyle" style="margin: 0; padding: 0;" ng-keydown="keyPressed($event)">
@@ -50,7 +75,7 @@
                                         id="fontSelect"
                                         ng-model="currentFontId"
                                         ng-change="selectFontById(currentFontId)"
-                                        ng-options="font.id as font.name for font in currentFontCollection"
+                                        ng-options="font.id as font.name for font in currentFontCollection.fonts"
                                         style="font-family: 'Lucida Sans Unicode', sans-serif; font-size: 12px;">
                                 </select>&nbsp;
                             </td>
