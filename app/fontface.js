@@ -141,7 +141,8 @@ var templates = [
     {id: 'colors', templateUri: 'app/templates/colors.html'},
     {id: 'headings', templateUri: 'app/templates/headings.html'},
     {id: 'google', templateUri: 'app/templates/google-search.html'},
-    {id: 'typecast-1', templateUri: 'app/templates/typecast-1.html'}
+    {id: 'typecast-1', templateUri: 'app/templates/typecast-1.html'},
+    {id: 'typecast-showcase', templateUri: 'app/templates/typecast-showcase.html'}
 ];
 
 

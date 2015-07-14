@@ -120,7 +120,10 @@ var thbFonts =
         {"id": "PT+Sans Narrow", "name": "PT Sans Narrow", "providerId": "google"},
         {"id": "Raleway", "name": "Raleway", "providerId": "google"},
         {"id": "Oxygen", "name": "Oxygen", "providerId": "google"},
-        {"id": "Scada", "name": "Scada"}
+        {"id": "Scada", "name": "Scada"},
+        {"id": "Pragati+Narrow", "name": "Pragati Narrow"},
+        {"id": "Jaldi", "name": "Jaldi"},
+        {"id": "Kadwa", "name": "Kadwa"}
     ];
     
     //<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Orienta|Fira+Sans|Noto+Sans|Droid+Sans|Average+Sans|Tauri|Anaheim|Duru+Sans|Noto+Serif|Gudea|Ek+Mukta|Martel+Sans|Alegreya+Sans|Cambay|Pathway+Gothic+One|Merriweather+Sans|Sintony|Pontano+Sans|Telex|Carme|Slabo+13px|Slabo+27px|Roboto+Slab|Sanchez|Noticia+Text|Crimson+Text' rel='stylesheet' type='text/css'>
