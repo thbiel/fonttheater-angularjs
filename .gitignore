@@ -1,4 +1,11 @@
 .DS_Store
+
 .idea
 .idea_modules
 *.iml
+
+_site/
+.sass-cache/
+.jekyll-metadata
+
+
