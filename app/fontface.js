@@ -30,7 +30,9 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
 
     $scope.currentTemplateCollection = templates;
 
-    $scope.fontLibrary = new FontLibrary(thbFonts);
+    $scope.fontLibrary = new FontLibrary(checkOut.concat(underratedFavorites));
+    //$scope.fontLibrary = new FontLibrary(thbFonts);
+    //$scope.fontLibrary = new FontLibrary(cssFonts);
 
     $scope.fontCollections = $scope.fontLibrary.fontCollections;
 

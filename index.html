@@ -33,6 +33,46 @@
                 font-weight: normal;
                 font-style: normal;
             }
+            @font-face {
+                font-family: 'Amble';
+                src: url('fonts/new-scheme/fontsquirrel/Amble/Amble.woff') format('woff');
+            }
+            @font-face {
+                font-family: 'Amble-Light';
+                src: url('fonts/new-scheme/fontsquirrel/Amble/Amble_Light.woff') format('woff');
+            }
+            @font-face {
+                font-family: 'Montserrat-Light';
+                src: url('fonts/new-scheme/fontsquirrel/Montserrat/Montserrat-Light.otf') format('otf');
+            }
+            @font-face {
+                font-family: 'Montserrat-Regular';
+                src: url('fonts/new-scheme/fontsquirrel/Montserrat/Montserrat-Regular.otf') format('otf');
+            }
+            @font-face {
+                font-family: 'Metropolis';
+                src: url('fonts/new-scheme/fontsquirrel/Metropolis/Metropolis-Regular.woff') format('woff');
+            }
+            @font-face {
+                font-family: 'Metropolis-Medium';
+                src: url('fonts/new-scheme/fontsquirrel/Metropolis/Metropolis-Medium.woff') format('woff');
+            }
+            @font-face {
+                font-family: 'Klinic-Slab_Book';
+                src: url('fonts/new-scheme/others/Klinic-Slab/Klinic-Slab-n4.woff') format('woff');
+            }
+            @font-face {
+                font-family: 'Klinic-Slab_Medium';
+                src: url('fonts/new-scheme/others/Klinic-Slab/Klinic-Slab-n5.woff') format('woff');
+            }
+            @font-face {
+                font-family: 'Knile';
+                src: url('fonts/new-scheme/others/Knile/knile-regular-webfont.woff') format('woff');
+            }
+            @font-face {
+                font-family: 'National_Book';
+                src: url('fonts/new-scheme/others/National/National_Book.woff2') format('woff2');
+            }
         </style>
         <style>
             @font-face {
@@ -45,8 +85,10 @@
     </head>
 
     <body ng-style="currentFontStyle" style="margin: 0; padding: 0;" ng-keydown="keyPressed($event)">
+
     <table cellpadding="0" cellspacing="0" style="width: 100%; height: 100%; margin: 0; padding: 0;">
         <tr>
+            <td width="25%"></td>
             <td height="730" style="width: 80%;" ng-style="primaryBackgroundStyle" valign="top">
                 <div style="margin-left: 40px; margin-right: 40px; margin-top: 10px;">
                     <table class="menu">
@@ -96,5 +138,6 @@
             <td style="width: 20%;" ng-style="shadowBackgroundStyle"></td>
         </tr>
     </table>
+
     </body>
 </html>

@@ -144,8 +144,65 @@ var thbFonts =
         {"id": "Pragati+Narrow", "name": "Pragati Narrow", "providerId": "google"},
         {"id": "Jaldi", "name": "Jaldi", "providerId": "google"},
         {"id": "Kadwa", "name": "Kadwa", "providerId": "google"},
-        {"id": "Amble", "name": "Amble", "providerId": "google"}
+        {"id": "amble-light-condensed", "name": "amble-light-condensed", "providerId": "file"},
+        {"id": "Amble-Light", "name": "Amble-Light", "providerId": "file"},
+        {"id": "Amble", "name": "Amble", "providerId": "file"},
+        {"id": "Palanquin", "name": "Palanquin", "providerId": "google"},
+        {"id": "Assistant", "name": "Assistant", "providerId": "google"},
+        {"id": "NTR", "name": "NTR", "providerId": "google"},
+        {"id": "Actor", "name": "Actor", "providerId": "google"},
+        {"id": "Noto+Sans", "name": "Noto Sans", "providerId": "google"},
+        {"id": "National_Book", "name": "National_Book", "providerId": "file"},
+        {"id": "eau-sans-book", "name": "eau-sans-book", "providerId": "file"},
     ];
+
+var underratedFavorites =
+    [
+        {"id": "Knile", "name": "Knile", "providerId": "file"},
+        {"id": "Klinic-Slab_Book", "name": "Klinic-Slab_Book", "providerId": "file"},
+        {"id": "Klinic-Slab_Medium", "name": "Klinic-Slab_Medium", "providerId": "file"},
+        {"id": "National_Book", "name": "National_Book", "providerId": "file"},
+        {"id": "Harmattan", "name": "Harmattan", "providerId": "google"},
+        {"id": "Palanquin", "name": "Palanquin", "providerId": "google"},
+        {"id": "Actor", "name": "Actor", "providerId": "google"},
+        {"id": "Ek+Mukta", "name": "Ek Mukta", "providerId": "google"},
+        {"id": "Average+Sans", "name": "Average Sans", "providerId": "google"},
+        {"id": "Pathway+Gothic+One", "name": "Pathway Gothic One", "providerId": "google"},
+        {"id": "NTR", "name": "NTR", "providerId": "google"},
+        {"id": "Cantarell", "name": "Cantarell", "providerId": "google"}
+];
+
+var checkOut =
+    [
+        {"id": "Metropolis", "name": "Metropolis", "providerId": "file"},
+        {"id": "Metropolis-Medium", "name": "Metropolis-Medium", "providerId": "file"},
+        {"id": "Tauri", "name": "Tauri", "providerId": "google"},
+        {"id": "Telex", "name": "Telex", "providerId": "google"},
+        {"id": "Work+Sans", "name": "Work Sans", "providerId": "google"},
+        {"id": "Sarala", "name": "Sarala", "providerId": "google"},
+        {"id": "Scada", "name": "Scada", "providerId": "google"},
+        {"id": "Roboto+Condensed", "name": "Roboto Condensed", "providerId": "google"},
+        {"id": "Rosario", "name": "Rosario", "providerId": "google"},
+        {"id": "Rubik", "name": "Rubik", "providerId": "google"},
+        {"id": "Puritan", "name": "Puritan", "providerId": "google"},
+        {"id": "Rambla", "name": "Rambla", "providerId": "google"},
+        {"id": "Noto+Sans", "name": "Noto Sans", "providerId": "google"},
+        {"id": "Mandali", "name": "Mandali", "providerId": "google"},
+        {"id": "Mallanna", "name": "Mallanna", "providerId": "google"},
+        {"id": "Mada", "name": "Mada", "providerId": "google"},
+        {"id": "Jaldi", "name": "Jaldi", "providerId": "google"},
+        {"id": "Karla", "name": "Karla", "providerId": "google"},
+        {"id": "Khula", "name": "Khula", "providerId": "google"},
+        {"id": "Istok+Web", "name": "Istok Web", "providerId": "google"},
+        {"id": "Montserrat-Light", "name": "Montserrat-Light", "providerId": "file"},
+        {"id": "Montserrat", "name": "Montserrat", "providerId": "google"},
+        {"id": "Hind", "name": "Hind", "providerId": "google"},
+        {"id": "Asap", "name": "Asap", "providerId": "google"},
+        {"id": "Catamaran", "name": "Catamaran", "providerId": "google"},
+        {"id": "Duru+Sans", "name": "Duru Sans", "providerId": "google"}
+
+];
+
 
 var cssFonts = [
     {"id": "eau-sans-book", "name": "eau-sans-book", "providerId": "file"},
@@ -231,8 +288,5 @@ var cssFonts = [
     {"id": "urbano_700_normal", "name": "urbano", "providerId": "css"},
     //{"id": "urbano_italic_normal", "name": "urbano", "providerId": "css"}
 ];
-    
+
     //<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Orienta|Fira+Sans|Noto+Sans|Droid+Sans|Average+Sans|Tauri|Anaheim|Duru+Sans|Noto+Serif|Gudea|Ek+Mukta|Martel+Sans|Alegreya+Sans|Cambay|Pathway+Gothic+One|Merriweather+Sans|Sintony|Pontano+Sans|Telex|Carme|Slabo+13px|Slabo+27px|Roboto+Slab|Sanchez|Noticia+Text|Crimson+Text' rel='stylesheet' type='text/css'>
-
-
-
