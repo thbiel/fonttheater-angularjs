@@ -9,7 +9,7 @@ app.config(
         }).
         when('/:template?/:colorScheme?/:font?', {
             templateUrl: function(params) {
-                return templatesById[params['template']].templateUri
+                return resolveTemplate(params).templateUri
             }
         }).
         otherwise({
@@ -30,10 +30,12 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
 
     $scope.currentTemplateCollection = templates;
 
+    $scope.fontLibrary = new FontLibrary(checkOut);
+    //$scope.fontLibrary = new FontLibrary(underratedFavorites);
     //$scope.fontLibrary = new FontLibrary(checkOut.concat(underratedFavorites));
     //$scope.fontLibrary = new FontLibrary(thbFonts);
     //$scope.fontLibrary = new FontLibrary(cssFonts);
-    $scope.fontLibrary = new FontLibrary(offline);
+    //$scope.fontLibrary = new FontLibrary(offline);
 
     $scope.fontCollections = $scope.fontLibrary.fontCollections;
 
