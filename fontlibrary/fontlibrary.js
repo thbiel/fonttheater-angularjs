@@ -162,6 +162,7 @@ var underratedFavorites =
         {"id": "Klinic-Slab_Book", "name": "Klinic-Slab_Book", "providerId": "file"},
         {"id": "Klinic-Slab_Medium", "name": "Klinic-Slab_Medium", "providerId": "file"},
         {"id": "National_Book", "name": "National_Book", "providerId": "file"},
+        {"id": "Acherus+Grotesque", "name": "Acherus Grotesque", "providerId": "google"},
         {"id": "Harmattan", "name": "Harmattan", "providerId": "google"},
         {"id": "Palanquin", "name": "Palanquin", "providerId": "google"},
         {"id": "Actor", "name": "Actor", "providerId": "google"},
@@ -174,6 +175,15 @@ var underratedFavorites =
 
 var checkOut =
     [
+        {"id": "B612", "name": "B612", "providerId": "google"},
+        {"id": "Krub", "name": "Krub", "providerId": "google"},
+        {"id": "Khula", "name": "Khula", "providerId": "google"},
+        {"id": "Nanum+Gothic", "name": "Nanum Gothic", "providerId": "google"},
+        {"id": "PT+Sans+Narrow", "name": "PT Sans Narrow", "providerId": "google"},
+        {"id": "Molengo", "name": "Molengo", "providerId": "google"},
+        {"id": "Inder", "name": "Inder", "providerId": "google"},
+        {"id": "Mallanna", "name": "Mallanna", "providerId": "google"},
+        {"id": "Mandali", "name": "Mandali", "providerId": "google"},
         {"id": "Metropolis", "name": "Metropolis", "providerId": "file"},
         {"id": "Metropolis-Medium", "name": "Metropolis-Medium", "providerId": "file"},
         {"id": "Tauri", "name": "Tauri", "providerId": "google"},
