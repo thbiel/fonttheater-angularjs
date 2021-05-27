@@ -32,8 +32,8 @@ function FontLibrary (fontsJson) {
 
     function fontCollections(fonts) {
         return [
-            new FontCollection("All", fonts)
-            //new FontCollection("Sans-serifs",createFonts(['Cantarell', 'Quicksand'])),
+            new FontCollection("All", fonts),
+            //new FontCollection("Sans-serifs", thbFonts),
             //new FontCollection("Serifs",      createFonts(['Trykker'])),
             //new FontCollection("Slab-serifs", createFonts(['Roboto+Slab', 'Bitter']))
         ]
@@ -175,6 +175,11 @@ var underratedFavorites =
 
 var checkOut =
     [
+        {"id": "DM+Sans", "name": "DM Sans", "providerId": "google"},
+        {"id": "Spartan", "name": "Spartan", "providerId": "google"},
+        {"id": "Sen", "name": "Sen", "providerId": "google"},
+        {"id": "Alata", "name": "Alata", "providerId": "google"},
+        {"id": "Alatsi", "name": "Alatsi", "providerId": "google"},
         {"id": "B612", "name": "B612", "providerId": "google"},
         {"id": "Krub", "name": "Krub", "providerId": "google"},
         {"id": "Khula", "name": "Khula", "providerId": "google"},
@@ -260,4 +265,18 @@ var offline = [
         {"id": "urbano-extra-condensed_400_normal", "name": "urbano-extra-condensed", "providerId": "css"},
         {"id": "urbano-light-condensed_300_normal", "name": "urbano-light-condensed", "providerId": "css"},
         {"id": "urbano-light-extra-condensed_300_normal", "name": "urbano-light-extra-condensed", "providerId": "css"}
+];
+
+var sixStars = [
+    {"id": "font-face-ratio-display", "name": "ratio-display", "providerId": "css"},
+    {"id": "font-face-ratio", "name": "ratio", "providerId": "css"},
+    {"id": "Cantarell", "name": "Cantarell", "providerId": "google"},
+    {"id": "Source+Sans+Pro", "name": "Source Sans Pro", "providerId": "google"},
+    {"id": "Varela+Round", "name": "Varela Round", "providerId": "google"},
+    {"id": "Lato", "name": "Lato", "providerId": "google"},
+    {"id": "Palanquin", "name": "Palanquin", "providerId": "google"},
+    {"id": "Harmattan", "name": "Harmattan", "providerId": "google"},
+    {"id": "Actor", "name": "Actor", "providerId": "google"},
+    {"id": "Ek+Mukta", "name": "Ek Mukta", "providerId": "google"},
+    {"id": "Average+Sans", "name": "Average Sans", "providerId": "google"}
 ];
