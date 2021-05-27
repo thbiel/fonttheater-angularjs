@@ -12,22 +12,22 @@ angular.module('fontLibrary', [])
 function FontLibrary (fontsJson) {
     this.fonts = toFonts(fontsJson);
 
-    var fontsById = mapById(this.fonts);
+    const fontsById = mapById(this.fonts);
     this.fontsById = fontsById;
 
     this.fontCollections = fontCollections(this.fonts);
     this.fontCollectionsById = mapById(this.fontCollections);
 
     function toFonts(fontsJson) {
-        var result = [];
+        const result = [];
         angular.forEach(fontsJson, function(fontJson) {
             result.push(new Font(fontJson.id, fontJson.name, fontJson.providerId));
         });
         return result;
     }
 
-    var fontProviders = [
-        {id: 'google', name: 'Google Web Fonts', fontFaceCssBaseUrl: 'http://fonts.googleapis.com/css'}
+    const fontProviders = [
+        {id: 'google', name: 'Google Web Fonts', fontFaceCssBaseUrl: 'https://fonts.googleapis.com/css'}
     ];
 
     function fontCollections(fonts) {
@@ -40,7 +40,7 @@ function FontLibrary (fontsJson) {
     }
 
     function mapById(objectsWithId) {
-        var fontMap = {};
+        const fontMap = {};
         angular.forEach(objectsWithId, function(object) {
             fontMap[object.id] = object;
         });
@@ -49,7 +49,7 @@ function FontLibrary (fontsJson) {
     }
 
     function createFonts(fontIds) {
-        var result = [];
+        const result = [];
 
         angular.forEach(fontIds, function(fontId) {
             result.push(fontsById[fontId]);
@@ -76,9 +76,9 @@ function FontCollection(id, fonts) {
     this.googleFonts = filterByProvider('google');
 
     function filterByProvider(provider) {
-        var result = [];
+        const result = [];
         angular.forEach(fonts, function(font) {
-            if (font.providerId == provider) {
+            if (font.providerId === provider) {
                 result.push(font);
             }
         });
@@ -96,7 +96,7 @@ function fontFaceCssUrl(fontId, providerId) {
 }
 
 
-var thbFonts =
+const thbFonts =
     [
         {"id": "Urbano-Condensed_400_normal", "name": "Urbano-Condensed", "providerId": "css"},
         {"id": "Cambay", "name": "Cambay", "providerId": "google"},
@@ -156,7 +156,7 @@ var thbFonts =
         {"id": "eau-sans-book", "name": "eau-sans-book", "providerId": "file"},
     ];
 
-var underratedFavorites =
+const underratedFavorites =
     [
         {"id": "Knile", "name": "Knile", "providerId": "file"},
         {"id": "Klinic-Slab_Book", "name": "Klinic-Slab_Book", "providerId": "file"},
@@ -171,9 +171,9 @@ var underratedFavorites =
         {"id": "Pathway+Gothic+One", "name": "Pathway Gothic One", "providerId": "google"},
         {"id": "NTR", "name": "NTR", "providerId": "google"},
         {"id": "Cantarell", "name": "Cantarell", "providerId": "google"}
-];
+    ];
 
-var checkOut =
+const checkOut =
     [
         {"id": "DM+Sans", "name": "DM Sans", "providerId": "google"},
         {"id": "Spartan", "name": "Spartan", "providerId": "google"},
@@ -215,59 +215,59 @@ var checkOut =
         {"id": "Asap", "name": "Asap", "providerId": "google"},
         {"id": "Catamaran", "name": "Catamaran", "providerId": "google"},
         {"id": "Duru+Sans", "name": "Duru Sans", "providerId": "google"}
+    ];
+
+const offline = [
+    {"id": "Metropolis", "name": "Metropolis", "providerId": "file"},
+    {"id": "Metropolis-Medium", "name": "Metropolis-Medium", "providerId": "file"},
+    {"id": "Work+Sans", "name": "Work Sans", "providerId": "google"},
+    {"id": "Roboto+Condensed", "name": "Roboto Condensed", "providerId": "google"},
+    {"id": "Rubik", "name": "Rubik", "providerId": "google"},
+    {"id": "Asap", "name": "Asap", "providerId": "google"},
+
+    {"id": "eau-sans-book", "name": "eau-sans-book", "providerId": "file"},
+    {"id": "amble-light-condensed", "name": "amble-light-condensed", "providerId": "file"},
+    {"id": "font-face-adelle-sans", "name": "adelle-sans", "providerId": "css"},
+    {"id": "font-face-adelle", "name": "adelle", "providerId": "css"},
+    {"id": "font-face-allumi-std", "name": "allumi-std", "providerId": "css"},
+    {"id": "font-face-alternate-gothic-no-1-d", "name": "alternate-gothic-no-1-d", "providerId": "css"},
+    {"id": "font-face-alternate-gothic-no-2-d", "name": "alternate-gothic-no-2-d", "providerId": "css"},
+    {"id": "font-face-alternate-gothic-no-3-d", "name": "alternate-gothic-no-3-d", "providerId": "css"},
+    {"id": "font-face-apolline", "name": "apolline", "providerId": "css"},
+    {"id": "font-face-atrament-web", "name": "atrament-web", "providerId": "css"},
+    {"id": "font-face-atrament-web_light", "name": "atrament-web-light", "providerId": "css"},
+    {"id": "font-face-bebas-neue", "name": "bebas-neue", "providerId": "css"},
+    {"id": "font-face-bree-serif", "name": "bree-serif", "providerId": "css"},
+    {"id": "font-face-calluna-sans", "name": "calluna-sans", "providerId": "css"},
+    {"id": "font-face-comenia-sans-web", "name": "comenia-sans-web", "providerId": "css"},
+    {"id": "font-face-crete-rounded-web", "name": "crete-rounded-web", "providerId": "css"},
+    {"id": "font-face-cronos-pro-display", "name": "cronos-pro-display", "providerId": "css"},
+    {"id": "font-face-elena-web-basic", "name": "elena-web-basic", "providerId": "css"},
+    {"id": "font-face-ff-tisa-web-pro", "name": "ff-tisa-web-pro", "providerId": "css"},
+    {"id": "font-face-league-gothic", "name": "league-gothic", "providerId": "css"},
+    {"id": "font-face-museo-sans-rounded", "name": "museo-sans-rounded", "providerId": "css"},
+    {"id": "font-face-nudista-web", "name": "nudista-web", "providerId": "css"},
+    {"id": "font-face-obliqua", "name": "obliqua", "providerId": "css"},
+    {"id": "font-face-p22-underground-pc", "name": "p22-underground-pc", "providerId": "css"},
+    {"id": "font-face-parisine-std", "name": "parisine-std", "providerId": "css"},
+    {"id": "font-face-prenton-condensed", "name": "prenton-condensed", "providerId": "css"},
+    {"id": "font-face-quara-web", "name": "quara-web", "providerId": "css"},
+    {"id": "font-face-ratio-display", "name": "ratio-display", "providerId": "css"},
+    {"id": "font-face-ratio", "name": "ratio", "providerId": "css"},
+    {"id": "font-face-ronnia-condensed", "name": "ronnia-condensed", "providerId": "css"},
+    {"id": "font-face-ronnia", "name": "ronnia", "providerId": "css"},
+    {"id": "font-face-sirba-web", "name": "sirba-web", "providerId": "css"},
+    {"id": "font-face-soleil", "name": "soleil", "providerId": "css"},
+    {"id": "font-face-tilden-sans-light", "name": "tilden-sans-light", "providerId": "css"},
+    {"id": "urbano-bold-condensed_700_normal", "name": "urbano-bold-condensed", "providerId": "css"},
+    {"id": "urbano-condensed_400_normal", "name": "urbano-condensed", "providerId": "css"},
+    {"id": "urbano-extra-bold-condensed_800_normal", "name": "urbano-extra-bold-condensed", "providerId": "css"},
+    {"id": "urbano-extra-condensed_400_normal", "name": "urbano-extra-condensed", "providerId": "css"},
+    {"id": "urbano-light-condensed_300_normal", "name": "urbano-light-condensed", "providerId": "css"},
+    {"id": "urbano-light-extra-condensed_300_normal", "name": "urbano-light-extra-condensed", "providerId": "css"}
 ];
 
-var offline = [
-        {"id": "Metropolis", "name": "Metropolis", "providerId": "file"},
-        {"id": "Metropolis-Medium", "name": "Metropolis-Medium", "providerId": "file"},
-        {"id": "Work+Sans", "name": "Work Sans", "providerId": "google"},
-        {"id": "Roboto+Condensed", "name": "Roboto Condensed", "providerId": "google"},
-        {"id": "Rubik", "name": "Rubik", "providerId": "google"},
-        {"id": "Asap", "name": "Asap", "providerId": "google"},
-
-        {"id": "eau-sans-book", "name": "eau-sans-book", "providerId": "file"},
-        {"id": "amble-light-condensed", "name": "amble-light-condensed", "providerId": "file"},
-        {"id": "font-face-adelle-sans", "name": "adelle-sans", "providerId": "css"},
-        {"id": "font-face-adelle", "name": "adelle", "providerId": "css"},
-        {"id": "font-face-allumi-std", "name": "allumi-std", "providerId": "css"},
-        {"id": "font-face-alternate-gothic-no-1-d", "name": "alternate-gothic-no-1-d", "providerId": "css"},
-        {"id": "font-face-alternate-gothic-no-2-d", "name": "alternate-gothic-no-2-d", "providerId": "css"},
-        {"id": "font-face-alternate-gothic-no-3-d", "name": "alternate-gothic-no-3-d", "providerId": "css"},
-        {"id": "font-face-apolline", "name": "apolline", "providerId": "css"},
-        {"id": "font-face-atrament-web", "name": "atrament-web", "providerId": "css"},
-        {"id": "font-face-atrament-web_light", "name": "atrament-web-light", "providerId": "css"},
-        {"id": "font-face-bebas-neue", "name": "bebas-neue", "providerId": "css"},
-        {"id": "font-face-bree-serif", "name": "bree-serif", "providerId": "css"},
-        {"id": "font-face-calluna-sans", "name": "calluna-sans", "providerId": "css"},
-        {"id": "font-face-comenia-sans-web", "name": "comenia-sans-web", "providerId": "css"},
-        {"id": "font-face-crete-rounded-web", "name": "crete-rounded-web", "providerId": "css"},
-        {"id": "font-face-cronos-pro-display", "name": "cronos-pro-display", "providerId": "css"},
-        {"id": "font-face-elena-web-basic", "name": "elena-web-basic", "providerId": "css"},
-        {"id": "font-face-ff-tisa-web-pro", "name": "ff-tisa-web-pro", "providerId": "css"},
-        {"id": "font-face-league-gothic", "name": "league-gothic", "providerId": "css"},
-        {"id": "font-face-museo-sans-rounded", "name": "museo-sans-rounded", "providerId": "css"},
-        {"id": "font-face-nudista-web", "name": "nudista-web", "providerId": "css"},
-        {"id": "font-face-obliqua", "name": "obliqua", "providerId": "css"},
-        {"id": "font-face-p22-underground-pc", "name": "p22-underground-pc", "providerId": "css"},
-        {"id": "font-face-parisine-std", "name": "parisine-std", "providerId": "css"},
-        {"id": "font-face-prenton-condensed", "name": "prenton-condensed", "providerId": "css"},
-        {"id": "font-face-quara-web", "name": "quara-web", "providerId": "css"},
-        {"id": "font-face-ratio-display", "name": "ratio-display", "providerId": "css"},
-        {"id": "font-face-ratio", "name": "ratio", "providerId": "css"},
-        {"id": "font-face-ronnia-condensed", "name": "ronnia-condensed", "providerId": "css"},
-        {"id": "font-face-ronnia", "name": "ronnia", "providerId": "css"},
-        {"id": "font-face-sirba-web", "name": "sirba-web", "providerId": "css"},
-        {"id": "font-face-soleil", "name": "soleil", "providerId": "css"},
-        {"id": "font-face-tilden-sans-light", "name": "tilden-sans-light", "providerId": "css"},
-        {"id": "urbano-bold-condensed_700_normal", "name": "urbano-bold-condensed", "providerId": "css"},
-        {"id": "urbano-condensed_400_normal", "name": "urbano-condensed", "providerId": "css"},
-        {"id": "urbano-extra-bold-condensed_800_normal", "name": "urbano-extra-bold-condensed", "providerId": "css"},
-        {"id": "urbano-extra-condensed_400_normal", "name": "urbano-extra-condensed", "providerId": "css"},
-        {"id": "urbano-light-condensed_300_normal", "name": "urbano-light-condensed", "providerId": "css"},
-        {"id": "urbano-light-extra-condensed_300_normal", "name": "urbano-light-extra-condensed", "providerId": "css"}
-];
-
-var sixStars = [
+const sixStars = [
     {"id": "font-face-ratio-display", "name": "ratio-display", "providerId": "css"},
     {"id": "font-face-ratio", "name": "ratio", "providerId": "css"},
     {"id": "Cantarell", "name": "Cantarell", "providerId": "google"},

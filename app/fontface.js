@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'fontLibrary', 'colorSchemes']);
+const app = angular.module('app', ['ngRoute', 'fontLibrary', 'colorSchemes']);
 
 app.config(
     ['$routeProvider', function($routeProvider) {
@@ -18,6 +18,13 @@ app.config(
     }]
 );
 
+const templates = [
+    {id: 'colors', templateUri: 'app/templates/colors.html'},
+    {id: 'headings', templateUri: 'app/templates/headings.html'},
+    {id: 'google', templateUri: 'app/templates/google-search.html'},
+    {id: 'typecast-1', templateUri: 'app/templates/typecast-1.html'},
+    {id: 'typecast-showcase', templateUri: 'app/templates/typecast-showcase.html'}
+];
 app.controller('FontController', function ($scope, $routeParams, $route, $location, fontLibraryService, colorSchemes) {
 
     //fontLibraryService.load(function (fontLib) {
@@ -48,14 +55,14 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
     };
 
     function currentFont(fontId) {
-        var font = $scope.fontLibrary.fontsById[fontId];
+        const font = $scope.fontLibrary.fontsById[fontId];
         $scope.currentFont = font;
         $scope.currentFontId = font.id;
         $scope.currentFontStyle = fontStyle(font);
     }
 
     $scope.selectFontCollectionById = function(fontCollectionId) {
-        var fontCollection = $scope.fontLibrary.fontCollectionsById[fontCollectionId];
+        const fontCollection = $scope.fontLibrary.fontCollectionsById[fontCollectionId];
         $scope.currentFontCollection = fontCollection;
         $scope.currentFontCollectionId = fontCollection.id;
         currentFont($scope.currentFontCollection.fonts[0].id);
@@ -64,21 +71,21 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
     $scope.selectFontCollectionById($scope.fontCollections[0].id);
 
     $scope.selectPreviousFont = function() {
-        var index = $scope.currentFontCollection.fonts.indexOf($scope.currentFont);
+        const index = $scope.currentFontCollection.fonts.indexOf($scope.currentFont);
         if (index > 0) {
             goToUrlForFont($scope.currentFontCollection.fonts[index - 1].id)
         }
     };
 
     $scope.selectNextFont = function() {
-        var index = $scope.currentFontCollection.fonts.indexOf($scope.currentFont);
+        const index = $scope.currentFontCollection.fonts.indexOf($scope.currentFont);
         if (index < ($scope.currentFontCollection.fonts.length - 1)) {
             goToUrlForFont($scope.currentFontCollection.fonts[index + 1].id)
         }
     };
 
     function goToUrlForFont(fontId) {
-        var page = $location.path().split('/')[1];
+        const page = $location.path().split('/')[1];
         $location.path('/' + page + '/' + $scope.selectedColorScheme.id + '/' +  fontId)
     }
 
@@ -87,9 +94,9 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
     }
 
     $scope.keyPressed = function(event) {
-        if (event.which == 37) {
+        if (event.which === 37) {
             $scope.selectPreviousFont();
-        } else if (event.which == 39) {
+        } else if (event.which === 39) {
             $scope.selectNextFont();
         }
     };
@@ -97,16 +104,16 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
     $scope.colorSchemes = colorSchemes.colorSchemes;
 
     $scope.$on('$routeChangeSuccess', function() {
-        var colorScheme = $routeParams['colorScheme'];
+        let colorScheme = $routeParams['colorScheme'];
         if (!colorScheme) {
             colorScheme = colorSchemes.colorSchemes[0].id;
         }
 
         selectColorScheme(colorScheme);
 
-        var fontParam = $routeParams['font'];
+        const fontParam = $routeParams['font'];
 
-        var fontId;
+        let fontId;
         if (fontParam) {
             fontId = fontParam;
         } else {
@@ -140,31 +147,23 @@ app.controller('FontController', function ($scope, $routeParams, $route, $locati
     }
 });
 
-var templates = [
-    {id: 'colors', templateUri: 'app/templates/colors.html'},
-    {id: 'headings', templateUri: 'app/templates/headings.html'},
-    {id: 'google', templateUri: 'app/templates/google-search.html'},
-    {id: 'typecast-1', templateUri: 'app/templates/typecast-1.html'},
-    {id: 'typecast-showcase', templateUri: 'app/templates/typecast-showcase.html'}
-];
 
-
-var templatesById = mapTemplateUriById(
+const templatesById = mapTemplateUriById(
     templates
 );
 
 function mapTemplateUriById(templates) {
-    var map = {};
+    const map = {};
     angular.forEach(templates, function(template) {
         map[template.id] = template;
     });
     return map;
 }
 
-var DEFAULT_TEMPLATE_ID = 'headings';
+const DEFAULT_TEMPLATE_ID = 'headings';
 
 function resolveTemplate(routeParams) {
-    var id = routeParams['template'];
+    let id = routeParams['template'];
     if (!id) {
         id = DEFAULT_TEMPLATE_ID;
     }
