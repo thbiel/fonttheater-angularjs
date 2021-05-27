@@ -162,7 +162,7 @@ const underratedFavorites =
         {"id": "Klinic-Slab_Book", "name": "Klinic-Slab_Book", "providerId": "file"},
         {"id": "Klinic-Slab_Medium", "name": "Klinic-Slab_Medium", "providerId": "file"},
         {"id": "National_Book", "name": "National_Book", "providerId": "file"},
-        {"id": "Acherus+Grotesque", "name": "Acherus Grotesque", "providerId": "google"},
+        //{"id": "Acherus+Grotesque", "name": "Acherus Grotesque", "providerId": "google"},
         {"id": "Harmattan", "name": "Harmattan", "providerId": "google"},
         {"id": "Palanquin", "name": "Palanquin", "providerId": "google"},
         {"id": "Actor", "name": "Actor", "providerId": "google"},
