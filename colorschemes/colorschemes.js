@@ -1,15 +1,4 @@
-angular.module('colorSchemes', [])
-    .factory('colorSchemes', function() {
-        return {
-            allFonts: function() {
-                return fonts;
-            },
-            colorSchemes: colorSchemes,
-            colorSchemesById: colorSchemesById
-        };
-    });
-
-var colorSchemes = [
+const colorSchemes = [
     {id: 'Blue'    , primaryBackgroundColor: '#008DD0', shadowBackgroundColor: '#0076AF', primaryTextColor: '#00476E', secondaryTextColor: 'white'},
     {id: 'Slate 1'   , primaryBackgroundColor: '#263238', shadowBackgroundColor: '#73A643', primaryTextColor: '#FFCB6B', secondaryTextColor: 'white'},
     {id: 'Slate 2'   , primaryBackgroundColor: '#263238', shadowBackgroundColor: '#73A643', primaryTextColor: '#C3E88D', secondaryTextColor: 'white'},
@@ -29,11 +18,21 @@ var colorSchemes = [
     {id: 'White'   , primaryBackgroundColor: '#FFFFFF', shadowBackgroundColor: '#FFFFFF', primaryTextColor: '#00476E', secondaryTextColor: '#00476E'},
     {id: 'Oliven'  , primaryBackgroundColor: '#242B33', shadowBackgroundColor: '#242B33', primaryTextColor: '#82aa3e', secondaryTextColor: 'white'}
 ];
+const colorSchemesById = mapById(colorSchemes);
+angular.module('colorSchemes', [])
+    .factory('colorSchemes', function() {
+        return {
+            allFonts: function() {
+                return fonts;
+            },
+            colorSchemes: colorSchemes,
+            colorSchemesById: colorSchemesById
+        };
+    });
 
-var colorSchemesById = mapById(colorSchemes);
 
 function mapById(objectsWithId) {
-    var fontMap = {};
+    const fontMap = {};
     angular.forEach(objectsWithId, function(object) {
         fontMap[object.id] = object;
     });
